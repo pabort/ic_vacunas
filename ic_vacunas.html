@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>💉 El uso de la estadística en el desarrollo de vacunas</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="30 de agosto de 2021" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 💉 El uso de la estadística en el desarrollo de vacunas
+## Estadística II - División Saino
+### 30 de agosto de 2021
+
+---
+
+
+
+
+
+
+class: center, middle
+.left[### Antes de arrancar]
+
+## ¿Cómo te sentís con el regreso a las clases presenciales?
+
+&lt;img src="figs/minions-por-fin.gif" style="display: block; margin: auto;" /&gt;
+
+Ingresá el código **8069 9287** en el siguiente enlace
+
+[www.menti.com](https://www.menti.com/)
+
+&lt;br/&gt;
+[&gt; ver resultados &lt;](https://www.mentimeter.com/s/064a59c4742344d245d5f41fb08c37f9/4f30d7c20fa8)
+
+
+---
+# 🦠 COVID-19
+
+.pull-left[
+&lt;img src="figs/proceso-vacuna.gif" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+## ¿Cómo se desarrollan las vacunas?
+
+## ¿Interviene la estadística de alguna manera?
+]
+
+
+---
+class: center, middle
+
+&lt;iframe width="853" height="505" src="https://www.youtube.com/embed/74WQgNa3OsQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+class: center, middle
+.pull-left[
+# ¿Qué nos dicen las medidas de efectividad de las vacunas? 
+
+&lt;img src="figs/vacuna.gif" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;img src="figs/eficacia-vacunas.jpeg" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+
+
+
+# 💉 Ejemplo
+.pull-left[
+
+La compañía **Johnson &amp; Johnson**, que entre otras cosas desarrolla productos farmacéuticos, informó -en función de los ensayos para probar la eficacia de su vacuna **Janssen**- que  de las 19630 personas que la recibieron, 66 desarrollaron COVID-19.
+
+&lt;img src="figs/jansenn_vacuna.png" width="50%" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;img src="figs/jansenn_recip.jpeg" width="65%" style="display: block; margin: auto;" /&gt;
+
+&lt;b&gt;&lt;b&gt;
+{{content}}
+
+]
+
+--
++ **¿Cuál es el parámetro de interés?** `$$\theta = P$$`
+{{content}}
+--
++ **¿Cómo lo podemos estimar?** `$$\hat{\theta} = \hat{p}$$`
+{{content}}
+
+---
+## Resolución
+### Estimación puntual
+`$$\hat{p} = \dfrac{66}{19630} = 0.0034 \qquad \Rightarrow \qquad 0.34\mbox{ %}$$`
+### Estimación por intervalos (95 % de confianza)
+`$$LIC = 0.0034 - 1.96 \, \sqrt{\dfrac{0.0034 \cdot (1-0.0034)}{19630}} = 0.0026 \qquad \Rightarrow \qquad 0.26\mbox{ %}$$`
+
+`$$LSC = 0.0034 + 1.96 \, \sqrt{\dfrac{0.0034 \cdot (1-0.0034)}{19630}} = 0.0042 \qquad \Rightarrow \qquad 0.42\mbox{ %}$$`
+
+---
+class: inverse, middle, center
+
+.pull-left[
+### ¿Esta es la medida de 
+### efectividad que se 
+### publican en los estudios 
+### científicos y medios de 
+### comunicación?
+# 🤔
+]
+.pull-right[
+&lt;img src="figs/eficacia-vacunas.jpeg" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: center
+## ¿Cómo se diseña un experimento para medir la efectividad de vacunas?
+&lt;img src="figs/grupos_trat_placebo.jpg" style="display: block; margin: auto;" /&gt;
+
+&lt;br/&gt;
+--
+**Grupo Placebo (control)**: voluntarios que reciben una sustancia (*placebo*) sin uso terapéutico que se administra de la misma forma que la vacuna.
+
+--
+
+**Grupo de vacunados**: voluntarios que reciben la vacuna.
+
+---
+class: center
+## ¿Cómo se diseña un experimento para medir la efectividad de vacunas?
+&lt;img src="figs/grupos_pacebo_vacunas.jpg" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+## 🦠 Riesgo de contraer Covid
+
+
+.pull-left[
+
+&lt;br/&gt;
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Vacunados &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Placebos &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; con Covid &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; \(X_{_V}\) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; \(X_{_P}\) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sin Covid &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; \(Y_{_V}\) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; \(Y_{_P}\) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; \(n_{_V}\) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; \(n_{_P}\) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+### 💉 Riesgo en vacunados
+`$$\widehat{RV} = \dfrac{X_{_V}}{n_{_V}}$$`
+
+.center[### 💊 Riesgo en placebos]
+`$$\widehat{RP} = \dfrac{X_{_P}}{n_{_P}}$$`
+]
+
+---
+### Riesgo Relativo (RR): 💉 vs. 💊
+
+.pull-left[
+`$$\widehat{\theta}=\widehat{RR} = \dfrac{\widehat{RV}}{\widehat{RP}} = \dfrac{\dfrac{X_{_V}}{n_{_V}}}{ \dfrac{X_{_P}}{n_{_P}}}$$`
+]
+
+.pull-right[
+**Puede interpretarse como el cociente de la probabilidad de contraer COVID con vacuna y la probabilidad de contraerlo con placebo**
+]
+
+&lt;br/&gt;
+### Efectividad relativa `\((ER)\)` de las vacunas 
+.pull-left[
+`$$\widehat{ER} = 1-\widehat{RR}$$`
+]
+
+.pull-right[
+**Indica en cuanto disminuye la probabildad de desarrollar la enfermedad si nos aplicamos la vacuna. (En general, la expresamos en porcentajes.)**
+]
+
+---
+### Ejemplo (continuación)
+.pull-left[
+El estudio sobre la vacuna Jansenn detalla la siguiente información en relación a los voluntarios que participaron en sus ensayos clínicos, agrupados como vacunados y placebos:
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Placebos &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Vacunados &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; con Covid &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 193 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 66 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sin Covid &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19691 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19630 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+.pull-right[
+&lt;img src="figs/vacuna_placebo_vacuna.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+### Ejemplo (continuación)
+.pull-left[
+El estudio sobre la vacuna Jansenn detalla la siguiente información en relación a los voluntarios que participaron en sus ensayos clínicos, agrupados como vacunados y placebos:
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Placebos &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Vacunados &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; con Covid &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 193 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 66 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sin Covid &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19498 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19564 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19691 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19630 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+.pull-right[
+&lt;img src="figs/vacuna_placebo_vacuna.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+## Resolución
+
+
+### Riesgo relativo de la vacuna Janssen
+`$$\widehat{RR} = \dfrac{66 / 19630}{193 / 19691} = \dfrac{0.0034}{0.0098} = 0.343 \qquad \Rightarrow \qquad 34.3 \mbox{ %}$$`
+&lt;br/&gt;
+### Efectividad relativa de la vacuna Janssen
+
+`$$\widehat{ER} = 1 - 0.343 = 0.657 \qquad \Rightarrow \qquad 65.7 \mbox{ %}$$`
+
+---
+class: inverse, middle, center
+
+## ¿Cómo podemos obtener un 
+## intervalo de confianza para
+## el Riesgo Relativo?
+# 🤔
+
+---
+### 📉 Distribución del estimador del RR
+Cuando `\(n\)` es suficientemente grande, el estimador del RR tiene una distribución aproximadamente normal
+`$$\widehat{RR} \stackrel{a}{\sim}  N(RR, Var(\widehat{RR}))$$`
+--
+
+###  Intervalo de confianza
+
+--
+
+`$$\widehat{\theta} \; \pm \; z \, EE(\widehat{\theta})$$`
+
+--
+
+`$$\widehat{RR} \; \pm \; z \, EE(\widehat{RR})$$`
+
+Donde `\(EE(\widehat{RR}) = \sqrt{Var(\widehat{RR})}\)`
+
+---
+
+## ¿Cómo calculamos `\(Var(\widehat{RR})\)`?
+
+--
+**Buscaremos el estimador de una transformación del RR, `\(\theta^{*} = \ln(RR)\)`:**
+--
+`$$\widehat{\theta}^{*} =\widehat{\ln\left(RR\right)} = \widehat{\ln\left(\dfrac{R_{_V}}{R_{_P}}\right)} =  \widehat{\ln\left(R_{_V}\right)} - \widehat{\ln\left(R_{_P}\right)}$$`
+&lt;br/&gt;
+
+### Intervalo de confianza
+`$$\widehat{\theta}^{*} \; \pm \; z \, EE(\widehat{\theta}^{*})$$`
+---
+
+### Varianza de `\(\widehat{\theta}^{*}\)`
+`$$Var(\widehat{\theta}^{*}) = Var\left(\widehat{\ln\left(RR\right)}\right) = Var\left(\widehat{\ln\left(R_{_V}\right)} - \widehat{\ln\left(R_{_P}\right)}\right)$$`
+--
+Aplicando propiedades de la varianza resulta
+`$$Var(\widehat{\theta}^{*}) = Var\left(\widehat{\ln\left(R_{_V}\right)}\right) + Var\left(\widehat{\ln\left(R_{_P}\right)}\right)$$`
+&lt;br/&gt;
+--
+
+**Estimadores para la varianza de `\(\ln\left(R_{_V}\right)\)` y `\(\ln\left(R_{_P}\right)\)`**
+
+.pull-left[
+
+`$$Var\left(\widehat{\ln\left(R_{_V}\right)}\right) = \dfrac{Y_{_V}/X_{_V}}{n_{_V}}$$`
+]
+
+.pull-right[
+
+`$$Var\left(\widehat{\ln\left(R_{_P}\right)}\right) = \dfrac{Y_{_P}/X_{_P}}{n_{_P}}$$`
+]
+
+---
+### Ejemplo (continuación)
+.pull-left[
+El estudio sobre la vacuna Jansenn detalla la siguiente información en relación a los voluntarios que participaron en sus ensayos clínicos, agrupados como vacunados y placebos:
+
+&lt;table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;  &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Placebos &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Vacunados &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; con Covid &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 193 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 66 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; sin Covid &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19498 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19564 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19691 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 19630 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+.pull-right[
+&lt;img src="figs/vacuna_placebo_vacuna.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Resolución
+
+
+### Estimación de la varianza de `\(\widehat{\ln(RR)}\)`
+
+.pull-left[
+
+`$$Var\left(\widehat{\ln\left(R_{_V}\right)}\right) = \dfrac{19564/66}{19630} = 0.0151$$`
+]
+
+.pull-right[
+
+`$$Var\left(\widehat{\ln\left(R_{_P}\right)}\right) = \dfrac{19498/193}{19691} = 0.0051$$`
+]
+
+--
+
+&lt;br/&gt;
+`$$Var\left(\widehat{\ln\left(RR\right)}\right) = 0.0151 + 0.0051 = 0.0202$$`
+
+---
+
+## Resolución
+
+### Intervalo de confianza para `\(\ln(RR)\)`
+
+`$$\widehat{\theta}^{*} \; \pm \; z \, EE(\widehat{\theta}^{*})$$`
+&lt;br/&gt;
+
+`$$LIC(\theta^{*}) = \ln(0.343) - 1.96 \, \sqrt{0.0202} = -1.3487$$`
+
+`$$LSC(\theta^{*}) = \ln(0.343) + 1.96 \, \sqrt{0.0202}=-0.7911$$`
+
+
+---
+
+## Resolución
+
+### Intervalo de confianza para el `\(RR\)` de la vacuna Jansenn
+
+`$$LIC(\theta^{*})= LIC(\ln(\theta)) = -1.3487 \qquad \Rightarrow \qquad LIC(\theta) = e^{-1.3487} = 0.2596$$`
+
+`$$LSC(\theta^{*})= LSC(\ln(\theta)) = -0.7911 \qquad \Rightarrow \qquad LSC(\theta) = e^{-0.7911} = 0.4533$$`
+--
+&lt;br/&gt;
+### Intervalo de confianza para la efectividad de la vacuna Jansenn
+
+`$$LIC(ER)= 1- LSC(\theta)= 1 - 0.4533 = 0.5467  \qquad \Rightarrow \qquad 54.67 \mbox{ %}$$`
+
+`$$LSC(ER)= 1- LIC(\theta)= 1 - 0.2596 = 0.7404 \qquad \Rightarrow \qquad 74.04 \mbox{ %}$$`
+---
+
+# 💉 Resumen de efectividad de Jansenn
+.pull-left[
+&lt;img src="figs/jansenn_recip.jpeg" width="75%" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+
+### Eficiencia Relativa
+`$$\widehat{ER} = 65.7 \mbox{ %}$$`
+### Intervalo de confianza
+`$$\left(54.67 \mbox{ %} \, , \, 74.04 \mbox{ %} \right)$$`
+]
+
+---
+class: center, middle
+
+
+&lt;img src="figs/minions-fin.gif" width="75%" style="display: block; margin: auto;" /&gt;
+
+## Hasta la próxima 👋
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
