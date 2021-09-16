@@ -36,6 +36,10 @@ opts_chunk$set(
   )
 ```
 
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE,
         fig.align='center', scipen=999)
