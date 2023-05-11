@@ -1,7 +1,7 @@
 ---
 title: "💉 El uso de la estadística en el desarrollo de vacunas"
-subtitle: "Estadística II - División Saino"
-author: "30 de agosto de 2021"
+subtitle: "Estadística II (FCE-UNC)"
+author: "Pablo Ortiz"
 #institute: ""
 output:
   xaringan::moon_reader:
@@ -69,6 +69,7 @@ Ingresá el código **8069 9287** en el siguiente enlace
 # 🦠 COVID-19
 
 .pull-left[
+
 ```{r, fig.align='center'}
 knitr::include_graphics('figs/proceso-vacuna.gif')
 ```

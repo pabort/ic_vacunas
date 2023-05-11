@@ -3,7 +3,7 @@
   <head>
     <title>💉 El uso de la estadística en el desarrollo de vacunas</title>
     <meta charset="utf-8" />
-    <meta name="author" content="30 de agosto de 2021" />
+    <meta name="author" content="Pablo Ortiz" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
@@ -18,9 +18,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # 💉 El uso de la estadística en el desarrollo de vacunas
-## Estadística II - División Saino
-### 30 de agosto de 2021
+]
+.subtitle[
+## Estadística II (FCE-UNC)
+]
+.author[
+### Pablo Ortiz
+]
 
 ---
 
@@ -50,6 +56,7 @@ Ingresá el código **8069 9287** en el siguiente enlace
 # 🦠 COVID-19
 
 .pull-left[
+
 &lt;img src="figs/proceso-vacuna.gif" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right[
@@ -511,6 +518,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
